@@ -32,5 +32,5 @@ $(DEPS): tinyrexx.g4
 	antlr4 -Dlanguage=Cpp tinyrexx.g4
 
 clean:
-	rm -f $(OBJS) $(TOBJS) $(SCOBJS) syncheck translate $(ANTLRS)
+	rm -f $(OBJS) $(TOBJS) $(SCOBJS) syncheck translate $(ANTLRS) a.out a.cpp
 

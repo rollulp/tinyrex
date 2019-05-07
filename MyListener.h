@@ -46,5 +46,16 @@ public:
 
   void enterTto(tinyrexxParser::TtoContext * ctx);
 
+  void enterCondif(tinyrexxParser::CondifContext * ctx);
+  void exitCondif(tinyrexxParser::CondifContext * ctx);
+
+  void enterCondelse(tinyrexxParser::CondelseContext * ctx);
+  void exitCondelse(tinyrexxParser::CondelseContext * ctx);
+
+  void exitC_op(tinyrexxParser::C_opContext * ctx);
+
+  void enterTestt(tinyrexxParser::TesttContext * ctx);
+  void exitTestt(tinyrexxParser::TesttContext * ctx);
+
 };
 

@@ -149,10 +149,50 @@ void MyListener::enterRange(tinyrexxParser::RangeContext * ctx){
 }
 
 void MyListener::exitRange(tinyrexxParser::RangeContext * ctx){
-    cout << '>' << ctx->ID()->getText() << "; " << ctx->ID()->getText() << "++) {" << endl;
+    cout << '>' << ctx->ID()->getText() << "; " << ctx->ID()->getText() << "++) {\n";
 }
 
 void MyListener::enterTto(tinyrexxParser::TtoContext * ctx){
     cout << "; ";
 }
 
+void MyListener::enterCondif(tinyrexxParser::CondifContext * ctx){
+    cout << string(indent, ' ') << "if ";
+    indent += 4;
+}
+
+void MyListener::exitCondif(tinyrexxParser::CondifContext * ctx){
+    indent -= 4;
+    cout << string(indent, ' ') << '}' << endl;
+}
+
+void MyListener::enterCondelse(tinyrexxParser::CondelseContext * ctx){
+   indent -= 4;
+   cout << string(indent, ' ') << "} else {\n";
+   indent += 4;
+}
+
+void MyListener::exitCondelse(tinyrexxParser::CondelseContext * ctx){
+    cout << string(indent, ' ') << "\n";
+}
+
+void MyListener::exitC_op(tinyrexxParser::C_opContext * ctx){
+    if (ctx->OR()) {
+        cout << " | ";
+    } else if ( ctx->AND() ) {
+        cout << " & ";
+    }
+}
+
+void MyListener::enterTestt(tinyrexxParser::TesttContext * ctx){
+    if (ctx->NOT())
+        cout << " !";
+    else
+        cout << '(';
+}
+void MyListener::exitTestt(tinyrexxParser::TesttContext * ctx){
+     if (ctx->NOT())
+        ;
+    else
+        cout << ')';
+}
