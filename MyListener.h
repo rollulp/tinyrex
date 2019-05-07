@@ -14,7 +14,7 @@ private:
 
 public:
   MyListener(const std::set<std::string> &ids);
-    
+
   void enterProgram(tinyrexxParser::ProgramContext * ctx);
   void exitProgram(tinyrexxParser::ProgramContext * ctx);
 
@@ -37,6 +37,14 @@ public:
 
   void exitA_op(tinyrexxParser::A_opContext * ctx);
   void exitR_op(tinyrexxParser::R_opContext * ctx);
+
+  void enterForeach(tinyrexxParser::ForeachContext * ctx);
+  void exitForeach(tinyrexxParser::ForeachContext * ctx);
+
+  void enterRange(tinyrexxParser::RangeContext * ctx);
+  void exitRange(tinyrexxParser::RangeContext * ctx);
+
+  void enterTto(tinyrexxParser::TtoContext * ctx);
 
 };
 

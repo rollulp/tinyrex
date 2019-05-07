@@ -35,7 +35,7 @@ void MyListener::exitAssign(tinyrexxParser::AssignContext * ctx) {
 }
 
 void MyListener::enterPrint(tinyrexxParser::PrintContext * ctx) {
-    cout << string(indent, ' ') << "cout << " ;    
+    cout << string(indent, ' ') << "cout << " ;
 }
 
 void MyListener::exitPrint(tinyrexxParser::PrintContext * ctx) {
@@ -133,4 +133,26 @@ void MyListener::exitTest(tinyrexxParser::TestContext * ctx){
     cout << ") {" << endl;
 }
 
+
+void MyListener::enterForeach(tinyrexxParser::ForeachContext * ctx){
+    cout << string(indent, ' ') << "for ";
+    indent += 4;
+}
+
+void MyListener::exitForeach(tinyrexxParser::ForeachContext * ctx){
+    indent -= 4;
+    cout << string(indent, ' ') << '}' << endl;
+}
+
+void MyListener::enterRange(tinyrexxParser::RangeContext * ctx){
+    cout << '(' << ctx->ID()->getText() << " = ";
+}
+
+void MyListener::exitRange(tinyrexxParser::RangeContext * ctx){
+    cout << '>' << ctx->ID()->getText() << "; " << ctx->ID()->getText() << "++) {" << endl;
+}
+
+void MyListener::enterTto(tinyrexxParser::TtoContext * ctx){
+    cout << "; ";
+}
 
