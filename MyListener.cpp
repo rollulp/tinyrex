@@ -178,9 +178,9 @@ void MyListener::exitCondelse(tinyrexxParser::CondelseContext * ctx){
 
 void MyListener::exitC_op(tinyrexxParser::C_opContext * ctx){
     if (ctx->OR()) {
-        cout << " | ";
+        cout << " || ";
     } else if ( ctx->AND() ) {
-        cout << " & ";
+        cout << " && ";
     }
 }
 
