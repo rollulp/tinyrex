@@ -196,3 +196,10 @@ void MyListener::exitTestt(tinyrexxParser::TesttContext * ctx){
     else
         cout << ')';
 }
+
+void MyListener::enterA_expr_(tinyrexxParser::A_expr_Context * ctx) {
+    cout << string(indent, ' ');
+}
+void MyListener::exitA_expr_(tinyrexxParser::A_expr_Context * ctx) {
+    cout << ';' << '\n';
+}

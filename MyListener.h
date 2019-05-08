@@ -57,5 +57,8 @@ public:
   void enterTestt(tinyrexxParser::TesttContext * ctx);
   void exitTestt(tinyrexxParser::TesttContext * ctx);
 
+  void enterA_expr_(tinyrexxParser::A_expr_Context * ctx);
+  void exitA_expr_(tinyrexxParser::A_expr_Context * ctx);
+
 };
 
