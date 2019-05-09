@@ -5,8 +5,8 @@ is_prime = 1
 if numero_primi >= 1 then do
 	say 2
 end
-do iter = 2 to numero_primi+1
-	iter = iter - 1
+iter = 2
+do while iter <= numero_primi
 	do c = 2 to numero_primi/2
 		if (num%c == 0) then do
 			is_prime = 0
