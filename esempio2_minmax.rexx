@@ -8,10 +8,10 @@ else do
     min = n
     do while n
         pull n
-        if num<min then do
+        if n<min & n then do
 	    min = n
 	end
-	if num>max then do
+	if n>max then do
 	    max = n
         end
     end 
