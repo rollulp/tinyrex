@@ -17,3 +17,6 @@ tinyrexxParser.h
 tinyrexxParser.o
 translate
 translate.o
+*.swp
+*.save
+*.tmp
